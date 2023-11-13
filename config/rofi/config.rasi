@@ -1,0 +1,119 @@
+/*config*/
+configuration {
+    show-icons:                 true;
+    drun-display-format:        "{name}";
+}
+
+
+
+* {
+    font: "JetBrainsMono 12";
+}
+
+
+/*window*/
+window {
+    width: 800px;
+
+    border: 0px solid;
+    border-color: @foreground;
+    border-radius: 12px;
+
+    background-color: #121212 ;
+    padding: 0px;
+}
+
+
+/*container!*/
+mainbox {
+    spacing: 10px;
+    padding: 20px;
+    children: [ "inputbar", "listview" ];
+}
+
+
+/*inputbar*/
+
+/*-conteiner inputbar*/
+inputbar {
+    spacing: 10px;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: #121212;
+    text-color: #cdd6f4 ;
+    children: [ "textbox-prompt-colon", "entry" ];
+}
+
+/*-icons*/
+textbox-prompt-colon {
+    expand: false;
+    str: "";
+    background-color: inherit;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+/*-promt*/
+entry {
+    background-color: inherit;
+    text-color: inherit;
+    placeholder: "Search";
+    placeholder-color: inherit;
+}
+
+/*list elemens*/
+listview {
+    columns: 2;
+    lines: 6;
+    scrollbar: false;
+    spacing: 10px;
+    text-color: #cdd6f4;
+    background-color: transparent;
+    border: 0px;
+}
+
+
+/*elements*/
+element {
+    spacing: 15px;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #121212;
+    text-color:#FFFFFF;
+}
+
+element.normal.normal {
+    background-color: #121212;
+    text-color:#FFFFFF;
+}
+
+
+element.alternate.normal {
+    background-color: #121212;
+    text-color: #FFFFFF;
+}
+
+element.selected.normal {
+    background-color: #181818;
+    text-color: #B3B3B3;
+}
+
+element-icon {
+    background-color: transparent;
+    text-color: inherit;
+    size: 32px;
+}
+element-text {
+    background-color: transparent;
+    text-color:  inherit;
+    vertical-align: 0.5;
+}
+
+
+
+
+
+
+
+
+
