@@ -7,3 +7,6 @@
 <h3>A Monocrome setup which is easy on the eyes</h3>
 
 <h4>yes , this is currently wip and im gonna expand it </h4>
+
+<h2>GTK THEME : https://github.com/aaryaman128/monocrome-aesthetic/</h2>
+<h2>ICON THEME :https://www.gnome-look.org/p/1289168</h2>
