@@ -44,7 +44,9 @@ tooltip label {
 #network.wifi,
 #custom-swaync,
 #custom-powermenu,
-#pulseaudio {
+#pulseaudio,
+#bluetooth,
+#custom-media{
     border-radius: 7px;
     padding-left: 15px;
     padding-right: 15px;
@@ -113,6 +115,9 @@ tooltip label {
 
     background-color: #eb4d4b;
 }
+#bluetooth.connected{
 
-
+color:#FFFFFF;
+}
+#custom-media{color:#FFFFFF;margin-right:150px;font-size:12px;}
 

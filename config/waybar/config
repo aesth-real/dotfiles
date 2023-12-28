@@ -10,8 +10,8 @@
 		
     	
 
-		"modules-left": ["custom/logo","hyprland/workspaces","tray"],
-		"modules-center": [],
+		"modules-left": ["custom/logo","hyprland/workspaces","tray" ,"bluetooth"],
+		"modules-center": ["custom/media"],
 		"modules-right": ["backlight","pulseaudio","network","custom/date","clock","battery","custom/mako"],
 
 		"disk": {
@@ -38,16 +38,26 @@
     			"max-length": 25
 		},
 		"network": {
-		    "interface": "wlp3s0",
-		    "format": "{ifname}",
+		    "interface": "wlan0",
+		    "format": " {ifname}",
 		    "format-wifi": " {essid}",
 		    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
 		    "format-disconnected": "", //An empty format will hide the module.
 		    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-		    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+		    "tooltip-format-wifi": "{essid}   ({signalStrength}%) ",
 		    "tooltip-format-ethernet": "{ifname} ",
 		    "tooltip-format-disconnected": "Disconnected",
 		    "max-length": 50
+		},
+		"bluetooth":{
+			"format":" {status}",
+			"format-icons":["󰤾","󰤿","󰥀","󰥁","󰥂","󰥃","󰥄","󰥅","󰥆","󰥈"],
+			"format-disabled":"",
+			"format-on":" Not Connected", 
+			"format-off":" Not Connected",
+			"format-no-controller":"No  adapter found",
+			"on-click":"exec blueman-manager",
+			"format-connected":" {device_alias} {device_battery_percentage} %",
 		},
 		"custom/logo": {
 			"format": "<span font='15'>󰣇</span>",
@@ -97,7 +107,7 @@
 		},
     	"pulseaudio": {
         	"format": "{icon} {volume}%",
-        	"format-bluetooth": "{icon} {volume}%",
+        	"format-bluetooth": "{icon}  {volume}%",
         	"format-bluetooth-muted": " {icon}",
         	"format-muted": "<span font='15'>󰸈</span>",
         	"format-icons": {
@@ -137,5 +147,17 @@
 			"on-click": "~/.config/hypr/scripts/do-not-disturb.sh",
 			"restart-interval": 1,
 			"tooltip": false
-		}
+		},
+	"custom/media":{
+   "format": "{icon} {}",
+    "escape": true,
+    "return-type": "json",
+    "max-length": 40,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl stop",
+    "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null", // Script in resources/custom_modules folder 
+ 	}
 }
